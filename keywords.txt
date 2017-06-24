@@ -1,0 +1,30 @@
+#######################################
+# Syntax Coloring Map For M10PWM
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+PWM_STRUCT	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+resolution	KEYWORD2
+dutyCycle	KEYWORD2
+
+#######################################
+# Instances (KEYWORD3)
+#######################################
+
+PWM	KEYWORD3
+#######################################
+# Constants (LITERAL1)
+#######################################
+PWM_SUB_ADDR_RESOLUTION_LOW	LITERAL1
+PWM_SUB_ADDR_RESOLUTION_HIGH	LITERAL1
+PWM_SUB_ADDR_REG_ON	LITERAL1
+PWM_SUB_ADDR_REG_OFF	LITERAL1
+PWM_SUB_ADDR_SYNC_RESET	LITERAL1
