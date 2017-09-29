@@ -24,7 +24,7 @@
 // pwm_set_resolution()
 //
 // Parameters:
-//      pwm_index : index for PWM unit 
+//      pwm_index : index for PWM channel 
 //                  on Arduino UNO Rev3, the mapping from index to pins are:
 //                  0 - pin 3
 //                  1 - pin 5
@@ -33,16 +33,16 @@
 //                  4 - pin 10
 //                  5 - pin 11
 //
-//      pwm_resolution: resolution for PWM, which determines the frequency
-//          The frequency is calculated as the following:
+//      pwm_resolution: resolution for PWM, which determines the base frequency
+//          The base frequency is calculated as the following:
 //          Assume the processor clock rate is C
-//          The PWM frequency is C / (resolution - 1)
+//          The PWM frequency is C / (resolution + 1)
 //     
 // Return Value:
 //      None
 //
 // Remarks:
-//      Function to set the resolution/frequency for PWM unit. 
+//      Function to set the resolution/frequency for PWM channel. 
 //----------------------------------------------------------------------------
 
 static void pwm_set_resolution (uint8_t pwm_index, uint16_t pwm_resolution) __reentrant
@@ -64,7 +64,7 @@ static void pwm_set_resolution (uint8_t pwm_index, uint16_t pwm_resolution) __re
 // pwm_set_duty_cycle()
 //
 // Parameters:
-//      pwm_index : index for PWM unit 
+//      pwm_index : index for PWM channel 
 //                  on Arduino UNO Rev3, the mapping from index to pins are:
 //                  0 - pin 3
 //                  1 - pin 5
@@ -73,14 +73,14 @@ static void pwm_set_resolution (uint8_t pwm_index, uint16_t pwm_resolution) __re
 //                  4 - pin 10
 //                  5 - pin 11
 //
-//      pwm_on    : The number of PWM cycles to be on
-//      pwm_off   ; The number of PWM cycles to be off 
+//      pwm_on    : The number of base cycles (1 / base_frequency) to be on
+//      pwm_off   : The number of base cycles (1 / base_frequency) to be off 
 //     
 // Return Value:
 //      None
 //
 // Remarks:
-//      Function to set the duty cycle of PWM unit. 
+//      Function to set the duty cycle of PWM channel. 
 //----------------------------------------------------------------------------
 static void pwm_set_duty_cycle (uint8_t pwm_index, uint8_t pwm_on, uint8_t pwm_off) __reentrant
 {
